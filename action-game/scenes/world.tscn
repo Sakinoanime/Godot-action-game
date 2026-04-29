@@ -3,42 +3,18 @@
 [ext_resource type="Script" uid="uid://d3xq5nicuo7jq" path="res://scripts/world.gd" id="1_k0juu"]
 [ext_resource type="PackedScene" uid="uid://foaoyoax18ag" path="res://scenes/player.tscn" id="2_71j4m"]
 [ext_resource type="Texture2D" uid="uid://tj1hfb1endrx" path="res://art/icon.svg" id="3_qfnet"]
+[ext_resource type="PackedScene" uid="uid://b4rjtjg687oo7" path="res://scenes/enemy.tscn" id="4_k0juu"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_fj7yv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
 size = Vector2(217, 20)
 
-[sub_resource type="LabelSettings" id="LabelSettings_fj7yv"]
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_k0juu"]
+size = Vector2(934.5, 20)
 
 [node name="Node2D" type="Node2D" unique_id=319417427]
 script = ExtResource("1_k0juu")
-
-[node name="player" parent="." unique_id=67563030 instance=ExtResource("2_71j4m")]
-position = Vector2(224, 193)
-
-[node name="platforms" type="Node" parent="." unique_id=200416249]
-
-[node name="PLATFORM STATICBODY" type="StaticBody2D" parent="platforms" unique_id=1137327560]
-position = Vector2(135, 635)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY" unique_id=381193097]
-shape = SubResource("RectangleShape2D_tlwt5")
-
-[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY" unique_id=1921171797]
-position = Vector2(1.3750058, -1.5258789e-05)
-scale = Vector2(1.7128904, 0.17968774)
-texture = ExtResource("3_qfnet")
-
-[node name="PLATFORM STATICBODY2" type="StaticBody2D" parent="platforms" unique_id=162691287]
-position = Vector2(135, 635)
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY2" unique_id=907126994]
-position = Vector2(290, -75)
-shape = SubResource("RectangleShape2D_tlwt5")
-
-[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY2" unique_id=1138144138]
-position = Vector2(291, -74.000015)
-scale = Vector2(1.7128904, 0.17968774)
-texture = ExtResource("3_qfnet")
 
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1572824522]
 
@@ -58,3 +34,46 @@ offset_bottom = 23.0
 text = "horizontal velocity:
 vertical velocity: "
 label_settings = SubResource("LabelSettings_fj7yv")
+
+[node name="player" parent="." unique_id=67563030 instance=ExtResource("2_71j4m")]
+position = Vector2(125, 185)
+
+[node name="platforms" type="Node" parent="." unique_id=200416249]
+
+[node name="PLATFORM STATICBODY" type="StaticBody2D" parent="platforms" unique_id=1137327560]
+position = Vector2(114, 818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY" unique_id=381193097]
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY" unique_id=1921171797]
+position = Vector2(1.3750058, -1.5258789e-05)
+scale = Vector2(1.7128904, 0.17968774)
+texture = ExtResource("3_qfnet")
+
+[node name="PLATFORM STATICBODY3" type="StaticBody2D" parent="platforms" unique_id=797073296]
+position = Vector2(107, 643)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY3" unique_id=767718850]
+position = Vector2(358.75, 0)
+shape = SubResource("RectangleShape2D_k0juu")
+
+[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY3" unique_id=2138496908]
+position = Vector2(360.375, -0.25003815)
+scale = Vector2(7.3222656, 0.1757812)
+texture = ExtResource("3_qfnet")
+
+[node name="PLATFORM STATICBODY2" type="StaticBody2D" parent="platforms" unique_id=162691287]
+position = Vector2(114, 818)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY2" unique_id=907126994]
+position = Vector2(290, -75)
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY2" unique_id=1138144138]
+position = Vector2(291, -74.000015)
+scale = Vector2(1.7128904, 0.17968774)
+texture = ExtResource("3_qfnet")
+
+[node name="enemy" parent="." unique_id=209333744 instance=ExtResource("4_k0juu")]
+position = Vector2(444, 297)
