@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://dogccq7tqfq44"]
+
+[ext_resource type="Script" uid="uid://d3xq5nicuo7jq" path="res://scripts/world.gd" id="1_k0juu"]
+[ext_resource type="PackedScene" uid="uid://foaoyoax18ag" path="res://scenes/player.tscn" id="2_71j4m"]
+[ext_resource type="Texture2D" uid="uid://tj1hfb1endrx" path="res://art/icon.svg" id="3_qfnet"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_tlwt5"]
+size = Vector2(217, 20)
+
+[sub_resource type="LabelSettings" id="LabelSettings_fj7yv"]
+
+[node name="Node2D" type="Node2D" unique_id=319417427]
+script = ExtResource("1_k0juu")
+
+[node name="player" parent="." unique_id=67563030 instance=ExtResource("2_71j4m")]
+position = Vector2(84, 196)
+
+[node name="platforms" type="Node" parent="." unique_id=200416249]
+
+[node name="PLATFORM STATICBODY" type="StaticBody2D" parent="platforms" unique_id=1137327560]
+position = Vector2(135, 635)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY" unique_id=381193097]
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY" unique_id=1921171797]
+position = Vector2(1.3750058, -1.5258789e-05)
+scale = Vector2(1.7128904, 0.17968774)
+texture = ExtResource("3_qfnet")
+
+[node name="PLATFORM STATICBODY2" type="StaticBody2D" parent="platforms" unique_id=162691287]
+position = Vector2(135, 635)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="platforms/PLATFORM STATICBODY2" unique_id=907126994]
+position = Vector2(290, -75)
+shape = SubResource("RectangleShape2D_tlwt5")
+
+[node name="Icon" type="Sprite2D" parent="platforms/PLATFORM STATICBODY2" unique_id=1138144138]
+position = Vector2(291, -74.000015)
+scale = Vector2(1.7128904, 0.17968774)
+texture = ExtResource("3_qfnet")
+
+[node name="Canvas" type="CanvasLayer" parent="." unique_id=1572824522]
+
+[node name="Control" type="Control" parent="Canvas" unique_id=2074839534]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Canvas/Control" unique_id=805651966]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 23.0
+text = "horizontal velocity:
+vertical velocity: "
+label_settings = SubResource("LabelSettings_fj7yv")
