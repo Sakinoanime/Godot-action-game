@@ -13,7 +13,7 @@ size = Vector2(217, 20)
 script = ExtResource("1_k0juu")
 
 [node name="player" parent="." unique_id=67563030 instance=ExtResource("2_71j4m")]
-position = Vector2(84, 196)
+position = Vector2(224, 193)
 
 [node name="platforms" type="Node" parent="." unique_id=200416249]
 
@@ -43,6 +43,7 @@ texture = ExtResource("3_qfnet")
 [node name="Canvas" type="CanvasLayer" parent="." unique_id=1572824522]
 
 [node name="Control" type="Control" parent="Canvas" unique_id=2074839534]
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
