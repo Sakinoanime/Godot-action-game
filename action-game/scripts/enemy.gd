@@ -34,9 +34,9 @@ func _physics_process(delta):
 	move_and_slide()
 
 
-func _on_vision_body_entered(body: Node2D) -> void:
-
-	if body.is_in_group("player"): # Make sure your Player is in the "player" group
+func _on_vision_body_entered(body) -> void:
+	#print(body.get_parent().name + " entered")
+	if body.name == "player": # Make sure your Player is in the "player" group
 		player = body
 		print("player entered")
 
